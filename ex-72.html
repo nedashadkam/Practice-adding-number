@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="ex-72.css">
+
+</head>
+
+
+<body>
+
+
+    <div id="container">
+
+        <h3>Practice adding numbera from 0 to 100</h3>
+
+        <span id="number1"></span> + <span id="number2"></span> = <input id="result"></input>
+
+        <input onclick="showResult()" type="button" value="check">
+        
+        <input onclick="reset() , this.value='resetting'" type="button" value="start">
+
+    </div>
+
+</body>
+
+<script>
+
+    let number1, number2;
+
+    function reset() {
+        number1 = Math.floor(Math.random() * 101);
+        number2 = Math.floor(Math.random() * 101);
+
+        document.getElementById("number1").innerHTML = number1;
+        document.getElementById("number2").innerHTML = number2;
+
+        document.getElementById("result").value = "";
+
+    }
+
+    function showResult() {
+
+        number1 = +document.getElementById("number1").innerHTML;
+        number2 = +document.getElementById("number2").innerHTML;
+
+        let result = +document.getElementById("result").value;
+
+        if(result == (number1 + number2)) {
+            alert("correct");
+        }else {
+            alert("false");
+        }
+
+    }
+
+</script>
+
+</html>
